@@ -107,12 +107,12 @@ Mermaid flow:
 ```mermaid
 flowchart LR
   A[Admin Dashboard] -->|Create Service Category| S[(services)]
-  L[Laundry App] -->|GET /api/services| S
-  L -->|POST /api/laundry/sub-services| SS[(sub_services)]
-  C[Customer App] -->|GET /api/services| S
-  C -->|GET /api/services/{serviceId}/laundries| LQ[Online Laundries With Active SubServices]
-  C -->|GET /api/sub-services?service_id=..&laundry_id=..| SS
-  C -->|POST /api/orders/purchase-service| O[(orders + order_items)]
+  L[Laundry App] -->|"GET /api/services"| S
+  L -->|"POST /api/laundry/sub-services"| SS[(sub_services)]
+  C[Customer App] -->|"GET /api/services"| S
+  C -->|"GET /api/services/:serviceId/laundries"| LQ[Online Laundries With Active SubServices]
+  C -->|"GET /api/sub-services?service_id=..&laundry_id=.."| SS
+  C -->|"POST /api/orders/purchase-service"| O[(orders + order_items)]
 ```
 
 ### 2) Customer – Packages (buy / gift coins)
